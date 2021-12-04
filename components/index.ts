@@ -7,3 +7,5 @@ export * from './Card/Card';
 export * from './HhData/HhData';
 export * from './Adventages/Adventages';
 export * from './Sort/Sort';
+export * from './Input/Input';
+export * from './Textarea/Textarea';
