@@ -4,9 +4,10 @@ import styles from './Product.module.css';
 import { Button, Card, Divider, Rating, Review, ReviewForm, Tag } from '..';
 import { declOfNum, priceRu } from '../../helpers/helpers';
 import Image from 'next/image';
-import { useRef, useState } from 'react';
+import { ForwardedRef, forwardRef, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 
-export const Product = ({ product, className, ...props }: ProductProps): JSX.Element => {
+export const Product = motion(forwardRef(({ product, className, ...props }: ProductProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
 	const [isReviewOpened, setisReviewOpened] = useState<boolean>(false);
 	const reviewRef = useRef<HTMLDivElement>(null);
 
@@ -18,27 +19,8 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
 		});
 	};
 
-	const rev1 = {
-		_id: "1qwe",
-		name: "Василий Раганов",
-		title: "Что вас ждет в этом курсе?",
-		description: "Напишу сразу в двух курсах, так как проходил оба. Java будет многим непросвещённым сложновата в изучении, но здесь перевес из-за лидирующего положения языка как самого популярного в программировании. Выбор мой пал на эту профессию еще и потому, что Java-разработчики получают самую большую зарплату. Хотя Python начинает догонять Java по многим моментам, но вот в крупном екоме разработке Джава все-таки остается главенствующей сейчас. Скажу так – полнота программы и интенсивность присуща обоим курсам GeekBrains. Хочу отметить, что с первого дня занятий вы приступаете к практике и получаете опыт коммерческой разработки уже в свое резюме. Скажу вам как прошедший это – реально помогло в трудоустройстве!",
-		createdAt: new Date(),
-		rating: 4
-	};
-	const rev2 = {
-		_id: "2qwe",
-		name: "Boiko Volodymyr",
-		title: "Что вас ждет в этом курсе?",
-		description: "Напишу сразу в двух курсах, так как проходил оба. Java будет многим непросвещённым сложновата в изучении, но здесь перевес из-за лидирующего положения языка как самого популярного в программировании. Выбор мой пал на эту профессию еще и потому, что Java-разработчики получают самую большую зарплату. Хотя Python начинает догонять Java по многим моментам, но вот в крупном екоме разработке Джава все-таки остается главенствующей сейчас. Скажу так – полнота программы и интенсивность присуща обоим курсам GeekBrains. Хочу отметить, что с первого дня занятий вы приступаете к практике и получаете опыт коммерческой разработки уже в свое резюме. Скажу вам как прошедший это – реально помогло в трудоустройстве!",
-		createdAt: new Date(),
-		rating: 4
-	};
-
-	const revs = [rev1, rev2];
-
 	return (
-		<div className={className} {...props}>
+		<div className={className} ref={ref} {...props}>
 			<Card className={styles.product}>
 				<div className={styles.logo}>
 					<Image
@@ -115,7 +97,7 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
 				color='blue'
 				ref={reviewRef}
 			>
-				{revs.map(r => (
+				{product.reviews.map(r => (
 					<div key={r._id}>
 						<Review review={r} />
 						<Divider />
@@ -125,4 +107,4 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
 			</Card>
 		</div>
 	);
-};
+}));
