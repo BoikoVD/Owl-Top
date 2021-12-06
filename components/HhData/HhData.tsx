@@ -7,7 +7,7 @@ import { numberHelper, priceRu } from '../../helpers/helpers';
 
 export const HhData = ({ count, juniorSalary, middleSalary, seniorSalary, ...props }: HhDataProps): JSX.Element => {
 	return (
-		<div className={styles.hh}>
+		<div className={styles.hh} {...props}>
 			<Card className={styles.count}>
 				<div className={styles.title}>Всего вакансий</div>
 				<div className={styles.countValue}>{numberHelper(count)}</div>
