@@ -13,8 +13,6 @@
 
 .header {
 	grid-area: header;
-
-	display: none;
 }
 
 .sidebar {
@@ -23,10 +21,35 @@
 
 .body {
 	grid-area: body;
+
+	outline: none;
 }
 
 .footer {
 	grid-area: footer;
+}
+
+.skipLink {
+	position: fixed;
+	top: 3px;
+	left: 40px;
+
+	display: block;
+	overflow: hidden;
+
+	height: 0;
+	padding: 3px;
+
+	opacity: 0;
+	color: var(--white);
+	border-radius: 3px;
+	background: var(--primary);
+}
+
+.displayed {
+	height: auto;
+
+	opacity: 1;
 }
 
 @media (max-width: 765px) {
@@ -36,14 +59,11 @@
 			"header"
 			"body"
 			"footer";
+		gap: 10px;
 	}
 
 	.sidebar {
 		display: none !important;
-	}
-
-	.header {
-		display: block;
 	}
 
 	.body {

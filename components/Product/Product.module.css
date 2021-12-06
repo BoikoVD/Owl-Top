@@ -3,6 +3,8 @@
 	grid-template-columns: [start] 70px [logoend] 30px [titlestart] calc(50% - 100px) [middle] 1fr [pricestart] auto [priceend] 40px [creditstart] auto [creditend] 40px [retestart] auto [end];
 	margin-top: 30px;
 	padding: 30px;
+	position: relative;
+	z-index: 1;
 }
 .logo {
 	grid-column: start / logoend;
@@ -87,7 +89,7 @@
 	margin-bottom: 5px;
 }
 .advantages {
-	border-left: 2px solid var(--green);
+	border-left: 2px solid #1DC37E;
 	padding-left: 15px;
 	margin-bottom: 20px;
 }
@@ -110,15 +112,8 @@
 	border-bottom: 1px dashed var(--gray-light);
 	margin-bottom: 10px;
 }
-
-.closed {
+.reviews {
 	overflow: hidden;
-	max-height: 0;
-	padding: 0;
-}
-.opened {
-	overflow: hidden;
-	max-height: none;
 	padding: 30px;
 }
 .rateTitle a {

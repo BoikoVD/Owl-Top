@@ -1,0 +1,36 @@
+.buttonIcon {
+	width: 40px;
+	height: 40px;
+
+	cursor: pointer;
+	transition: all 0.2s;
+
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 4px 4px rgb(0 0 0 / 5%);
+}
+
+.primary {
+	background-color: var(--primary);
+}
+
+.primary svg * {
+	fill: var(--white);
+}
+
+.primary:hover {
+	background-color: var(--primary-hover);
+}
+
+.white {
+	background-color: var(--white);
+	box-shadow: 0 4px 4px rgb(0 0 0 / 5%);
+}
+
+.white svg * {
+	fill: var(--primary);
+}
+
+.white:hover {
+	background-color: var(--gray-light);
+}
