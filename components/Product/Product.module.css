@@ -36,6 +36,8 @@
 }
 .advBlock {
 	grid-column: middle / end;
+	font-size: 16px;
+	line-height: 22px;
 }
 .actions {
 	grid-column: start / end;
@@ -79,10 +81,6 @@
 }
 .reviewButton {
 	margin-left: 20px;
-}
-.advBlock {
-	font-size: 16px;
-	line-height: 22px;
 }
 .advTitle {
 	font-weight: 700;

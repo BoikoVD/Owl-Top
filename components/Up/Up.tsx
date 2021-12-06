@@ -1,5 +1,4 @@
 import styles from './Up.module.css';
-import ArrorwUpIcon from './arrowUp.svg';
 import { useScrollY } from '../../hooks/useScrollY';
 import { useAnimation, motion } from 'framer-motion';
 import { useEffect } from 'react';
@@ -28,7 +27,7 @@ export const Up = (): JSX.Element => {
 			initial={{ opacity: 0 }}
 			className={styles.up}
 		>
-			<ButtonIcon appearance='primary' icon='arrowUp' onClick={scrollToTop} />
+			<ButtonIcon appearance='primary' icon='arrowUp' onClick={scrollToTop} aria-label='Наверх' />
 		</motion.div>
 	);
 };
