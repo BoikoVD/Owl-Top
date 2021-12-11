@@ -11,19 +11,7 @@ function Home({ menu }: HomeProps): JSX.Element {
 
 	return (
 		<>
-			<Htag tag='h1'>Text</Htag>
-			<Button appearance='primary' arrow='right'>Button</Button>
-			<Button appearance='ghost' arrow='right'>Button</Button>
-			<P size='l'>new text</P>
-			<P>new text</P>
-			<P size='s'>new text</P>
-			<Tag size='s' color='red'>new link</Tag>
-			<Rating rating={rating} isEditable={true} setRating={setRating} />
-			<ul>
-				{menu.map(m => (<li key={m._id.secondCategory}>{m._id.secondCategory}</li>))}
-			</ul>
-			<Input placeholder='Test' />
-			<Textarea placeholder='Test' />
+			<Htag tag='h1'>Main page</Htag>
 		</>
 	);
 }
